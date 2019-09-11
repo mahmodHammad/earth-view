@@ -7,19 +7,39 @@
     <title>Document</title>
 </head>
 <body>
+
+
+    <div class="form">
+        <input type="text" placeholder="min-lat" id="minlat"> 
+        <input type="text" placeholder="max-lat" id="maxlat"> 
+
+        <input type="text" placeholder="min-long" id="minlong">
+        <input type="text" placeholder="max-long" id="maxlong">
+        <button id="btn">search</button> 
+    </div>
+
+    <!-- displaying data  from api here-->
     <div class="x">
-        
         <img class="mimg">
     </div>
 
 
     <script src="index.js"></script>
     <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
     div{
         border: red .3px solid;
         width: 100%;
         height: 100%;
     }
+    img{
+        width: 100%;
+        height:100%;
+    }
+
     </style>
 </body>
 </html>

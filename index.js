@@ -17,7 +17,7 @@ submit.addEventListener('click',()=>{
 })
 
 function dis12(arr){
-    for(let i=0  ;i< 900 ; i++)
+    for(let i=0  ;i< arr.length ; i++)
         getJson(arr[i])       
 }
    

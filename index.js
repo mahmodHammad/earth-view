@@ -19,56 +19,45 @@ let alldates=
 
 let image=document.querySelector('.mimg')
 let cont =document.querySelector('.x')
-//let arrayofEarth=[]
 
 
 function dis12(arr){
-    for(let i=0  ; i<10 ; i++){
-            getJson(arr[i])
-        }
-    }
+    console.log(arr.length)
+    for(let i=0  ;i< arr.length ; i++)
+        getJson(arr[i])       
+}
     
-    function getJson (idate){     
+   
+function getJson (idate){     
         let url3=`https://epic.gsfc.nasa.gov/api/natural/date/${idate} api_key=4sXteRBfA51qWHoLzWocOdu3DcXcW67b9LZjW0C6`
-        fetch(url3).then((f)=>f.json()).then((me)=> select(me))  
+        fetch(url3).then((f)=>f.json()).then((array)=> select(array))  
     }
     
-    function select(array){
-        for(let i of array){
-            
-            if(i.centroid_coordinates.lat<35&&i.centroid_coordinates.lat>4 
-                &&i.centroid_coordinates.lon<32 &&i.centroid_coordinates.lon>5 ){
-                    // arrayofEarth.push(array)
-                    playwithJson(i)   
-                    console.log(i)
-                }
-            
+function select(array){
+    for(let i of array){
+        if(i.centroid_coordinates.lat<25&&i.centroid_coordinates.lat>14 
+        &&i.centroid_coordinates.lon<22 &&i.centroid_coordinates.lon>15 ){
+            playwithJson(i)   
+            console.log(i)
         }
     }
-    
+}
+function fixdate(inpdate){
+        return inpdate.substr( 0,inpdate.indexOf(' ')).replace(/-/g , '/')    
+}    
+
 function playwithJson(earth){
     let newh1= document.createElement("h1")
-    newh1.innerHTML=earth.identifier
+    newh1.innerHTML='Token at :'+fixdate(earth.date)
     cont.appendChild(newh1)
-
-    // for(let earth of earths){
-        
             //to convert date from(year-month-day hour)to y-m-d    
-        let modifiedDate=earth.date.substr( 0,earth.date.indexOf(' ')).replace(/-/g , '/')    
+        let modifiedDate=fixdate(earth.date)
             
         let source= `https://epic.gsfc.nasa.gov/archive/natural/${modifiedDate}/png/${earth.image}.png`  
         let newImg= document.createElement("img")
 
         newImg.setAttribute('src' ,source )
         cont.appendChild(newImg)
-    // }
-
 }   
 
 dis12(alldates)
-
-              
-    // //temp soulution ------will be changed later
-    //     setTimeout(()=>{
-           
-    //     },4000)

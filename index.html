@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Earth View</title>
+        <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
-    <div class="form">
-        <input type="text" placeholder="min-lat" id="minlat"> 
-        <input type="text" placeholder="max-lat" id="maxlat"> 
-
-        <input type="text" placeholder="min-long" id="minlong">
-        <input type="text" placeholder="max-long" id="maxlong">
-        <button id="btn">search</button> 
+<div class="signupSection">
+    <div class="info">
+        <h2 class="missoin" >Expolre Our Planet Over Years</h2>
+        <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+        <p>The History Is Here</p>
     </div>
 
-    <!-- displaying data  from api here-->
-    <div class="x">
-        <img class="mimg">
+    <div class="signupForm" name="signupform">
+        <h2>Lets Invade</h2>
+        <ul class="noBullet">
+        <li>
+            <input type="text" class="inputFields" id="minlat" placeholder="minLatitude" required/>
+            </li>
+            <li>
+            <input type="text" class="inputFields" id="maxlat" placeholder="maxLatitude" required/>
+            </li>
+            <li>
+            <input type="text" class="inputFields" id="minlong" placeholder="minlongitude" required/>
+            </li>
+            <li>
+            <input type="text" class="inputFields" id="maxlong" placeholder="maxlongitude" required/>
+            </li>
+        <li id="center-btn">
+            <button id="btn">Search</button>
+        </li>
+        </ul>
+    </div>
     </div>
 
+<div class="x">
+    <img class="mimg">
+</div>
 
     <script src="index.js"></script>
-    <style>
-        body{
-            margin: 0px;
-            padding: 0px;
-        }
-    div{
-        border: red .3px solid;
-        width: 100%;
-        height: 100%;
-    }
-    img{
-        width: 100%;
-        height:100%;
-    }
 
-    </style>
 </body>
 </html>
